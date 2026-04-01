@@ -6,6 +6,9 @@ const connectDB = require('./config/db');
 
 dotenv.config();
 
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+
 
 const app = express();
 
