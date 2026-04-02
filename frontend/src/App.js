@@ -14,9 +14,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/tasks" element={<Tasks />} />
+        <Route path="/products" element={<ProductsPage />} />
+       <Route path="/products/add" element={<AddProductPage />} />
       </Routes>
     </Router>
   );
 }
+
+
 
 export default App;
