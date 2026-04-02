@@ -15,7 +15,9 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/products" element={<ProductsPage />} />
-       <Route path="/products/add" element={<AddProductPage />} />
+        <Route path="/products/add" element={<AddProductPage />} />
+      <Route path="/orders" element={<OrdersPage />} />
+      <Route path="/orders/create" element={<CreateOrderPage />} />
       </Routes>
     </Router>
   );
