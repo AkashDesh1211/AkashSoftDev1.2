@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import API from "../api";
+import axiosInstance from "../axiosConfig";
 
 const CreateOrderPage = () => {
   const [shippingAddress, setShippingAddress] = useState("");
@@ -26,7 +26,7 @@ const CreateOrderPage = () => {
     };
 
     try {
-      await API.post("/orders", orderData);
+      await axiosInstance.post("/api/orders", orderData);
       alert("Order created successfully");
       setShippingAddress("");
       setTotalAmount("");

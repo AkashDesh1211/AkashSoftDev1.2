@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import API from "../api";
+import axiosInstance from "../axiosConfig";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
     try {
-      const { data } = await API.get("/products");
+      const { data } = await axiosInstance.get("/api/products");
       setProducts(data);
     } catch (error) {
       console.error(error);
@@ -15,7 +15,7 @@ const ProductsPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await API.delete(`/products/${id}`);
+      await axiosInstance.delete(`/api/products/${id}`);
       fetchProducts();
     } catch (error) {
       console.error(error);
