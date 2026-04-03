@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import API from "../api";
+import axiosInstance from "../axiosConfig";
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
 
   const fetchOrders = async () => {
     try {
-      const { data } = await API.get("/orders");
+      const { data } = await axiosInstance.get("/api/orders");
       setOrders(data);
     } catch (error) {
       console.error(error);
