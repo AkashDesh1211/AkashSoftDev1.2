@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import API from "../api";
+import axiosInstance from "../axiosConfig";
 
 const AddProductPage = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,7 @@ const AddProductPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post("/products", formData);
+      await axiosInstance.post("/api/products", formData);
       alert("Product added successfully");
       setFormData({
         name: "",
