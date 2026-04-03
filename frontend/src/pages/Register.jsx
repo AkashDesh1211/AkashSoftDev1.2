@@ -8,13 +8,19 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axiosInstance.post('/api/auth/register', formData);
-      alert('Registration successful. Please log in.');
-      navigate('/login');
-    } catch (error) {
-      alert('Registration failed. Please try again.');
-    }
+
+  try {
+    const { data } = await axiosInstance.post('/api/auth/register', {
+      name,
+      email,
+      password,
+    });
+
+    login(data);
+    navigate('/products');
+  } catch (error) {
+    setError(error.response?.data?.message || 'Registration failed');
+  }
   };
 
   return (
