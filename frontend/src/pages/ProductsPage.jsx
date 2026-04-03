@@ -6,7 +6,7 @@ const ProductsPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await API.get("/products");
+      const { data } = await axiosInstance.get("/api/products");
       setProducts(data);
     } catch (error) {
       console.error(error);
