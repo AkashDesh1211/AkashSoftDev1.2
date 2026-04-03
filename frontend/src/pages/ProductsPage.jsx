@@ -15,7 +15,7 @@ const ProductsPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await API.delete(`/products/${id}`);
+      await axiosInstance.delete(`/api/products/${id}`);
       fetchProducts();
     } catch (error) {
       console.error(error);
