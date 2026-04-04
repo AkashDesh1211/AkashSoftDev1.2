@@ -80,6 +80,99 @@ The application builds on the starter authentication structure supplied in the u
 
 ---
 
+---
+
+## How to Use the Application
+
+Once the application is running on the EC2 server, follow the steps below to use the system.
+
+### 1. Open the Application
+
+Open your web browser and navigate to the deployed application using the EC2 public IP:
+
+http://<your-ec2-public-ip>:3000
+
+---
+
+### 2. Login
+
+Use the provided test account to log in.
+
+Customer Account  
+Email: akash1211@gmail.com  
+Password: akash1211  
+
+Click the Login button to access the system.
+
+---
+
+### 3. Navigate the System
+
+After logging in, you can:
+
+- View and update your profile  
+- Browse available products  
+- Create a new order  
+- View your existing orders  
+
+Use the navigation bar to move between pages.
+
+---
+
+### 4. View Products
+
+1. Navigate to the Products page  
+2. Browse the list of available products  
+3. View product details  
+
+---
+
+### 5. Create an Order
+
+1. Go to the Orders page  
+2. Click on Create Order  
+3. Enter the required details  
+4. Submit the form  
+
+The order will be saved and displayed in your orders list.
+
+---
+
+### 6. Admin Functionality
+
+Use the admin account to access additional features.
+
+Admin Account  
+Email: admin@store.com  
+Password: admin123  
+
+Admin users can:
+
+- Add new products  
+- Update existing products  
+- Delete products  
+
+To perform these actions:
+
+1. Navigate to the Products page  
+2. Click Add Product to create a new product  
+3. Use edit or delete options on existing products  
+
+---
+
+### 7. Logout
+
+Click the Logout button in the navigation bar to end your session.
+
+---
+
+## Notes
+
+- Users must be logged in to access protected pages  
+- Admin-only features are restricted based on user role  
+- Ensure the admin account has `"role": "admin"` set in MongoDB  
+- If the application does not load, confirm the EC2 instance is running and the backend server is active using PM2  
+
 ## Project Structure
 
 ```text
