@@ -5,6 +5,7 @@ import axiosInstance from '../axiosConfig';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -13,8 +14,8 @@ const Login = () => {
 
   try {
     const { data } = await axiosInstance.post('/api/auth/login', {
-      email,
-      password,
+     email: formData.email,
+        password: formData.password,
     });
 
     login(data);
