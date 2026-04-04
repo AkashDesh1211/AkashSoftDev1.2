@@ -4,6 +4,7 @@ import axiosInstance from '../axiosConfig';
 
 const Register = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -11,9 +12,9 @@ const Register = () => {
 
   try {
     const { data } = await axiosInstance.post('/api/auth/register', {
-      name,
-      email,
-      password,
+      name: formData.name,
+        email: formData.email,
+        password: formData.password,
     });
 
     login(data);
